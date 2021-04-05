@@ -21,17 +21,17 @@ private:
     void dfs(TreeNode* node, TreeNode*& last) {
         if (node == nullptr) return;
         
-        TreeNode* leftNode = node->left; TreeNode* rightNode = node->right;
+        TreeNode* leftNode = node->left; 
+        TreeNode* rightNode = node->right;
         if (leftNode == rightNode) {
             last = node;
             return;
         }
         
-        node->left = nullptr;
         if (leftNode) {
+            node->left = nullptr;
             node->right = leftNode;
             dfs(leftNode, last);
-            last->left = nullptr;
             last->right = rightNode;
         }
         dfs(rightNode, last);
