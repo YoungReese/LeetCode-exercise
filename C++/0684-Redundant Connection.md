@@ -17,7 +17,7 @@ public:
     }
 private:
     void myUnion(int root1, int root2, vector<int>& parent) {
-        if (parent[root1] < parent[root2]) {  // 按秩归并
+        if (parent[root1] < parent[root2]) {          // 按秩归并
             parent[root1] += parent[root2];
             parent[root2] = root1;
         } else {
@@ -28,7 +28,7 @@ private:
     
     int myFind(int x, vector<int>& parent) {
         if (parent[x] < 0) return x;
-        return x = myFind(parent[x], parent); // 路经压缩
+        return parent[x] = myFind(parent[x], parent); // 路经压缩
     }
 };
 ```
