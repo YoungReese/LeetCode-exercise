@@ -5,13 +5,13 @@ https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-
 class Solution {
 public:
     vector<int> searchRange(vector<int>& nums, int target) {
-        int first = searchFistPosition(nums, target);
+        int first = searchFirstPosition(nums, target);
         if (first == -1) return {-1, -1};
         int last = searchLastPosition(nums, target);
         return {first, last};
     }
 private:
-    int searchFistPosition(vector<int>& nums, const int& target) {
+    int searchFirstPosition(vector<int>& nums, const int& target) {
         int first = -1;
         int left = 0, right = nums.size() - 1, mid;
         while (left <= right) {
